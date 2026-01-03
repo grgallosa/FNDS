@@ -1,3 +1,4 @@
+
 import { useState, useRef, useEffect } from 'react';
 import React from 'react';
 import { MessageCircle, Send, X, Bot, Loader2 } from 'lucide-react';
@@ -54,7 +55,8 @@ const GeminiAssistant: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const apiKey = (process as any).env.API_KEY;
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMessage,

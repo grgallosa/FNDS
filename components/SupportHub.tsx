@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, useEffect } from 'react';
 import { Send, Bot, Loader2, AlertCircle, Zap, HelpCircle, Wifi, SignalHigh, Globe, ClipboardList } from 'lucide-react';
 import { GoogleGenAI } from '@google/genai';
@@ -34,7 +35,8 @@ const SupportHub: React.FC = () => {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const apiKey = (process as any).env.API_KEY;
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: messageToSend,
