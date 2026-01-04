@@ -3,7 +3,7 @@
 <html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no" />
     <title>FNDS ISP | Next-Gen Connectivity</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,8 +33,15 @@
         --brand-yellow: #FFC700;
         --brand-dark: #0B0E14;
       }
-      body {
+      html, body {
+        overflow-x: hidden;
+        width: 100%;
+        position: relative;
         background-color: var(--brand-dark);
+        margin: 0;
+        padding: 0;
+      }
+      body {
         color: #FFFFFF;
         -webkit-font-smoothing: antialiased;
       }
@@ -50,18 +57,9 @@
         border: 1px solid rgba(255, 255, 255, 0.05);
       }
 
-      .glass-card-hover:hover {
-        background: rgba(255, 255, 255, 0.04);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-      }
-
-      .text-glow-blue {
-        text-shadow: 0 0 20px rgba(64, 84, 255, 0.4);
-      }
-
       /* Custom scrollbar */
       ::-webkit-scrollbar {
-        width: 8px;
+        width: 6px;
       }
       ::-webkit-scrollbar-track {
         background: var(--brand-dark);
@@ -77,13 +75,13 @@
   <script type="importmap">
 {
   "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
     "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
     "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
     "lucide-react": "https://esm.sh/lucide-react@^0.562.0",
     "@google/genai": "https://esm.sh/@google/genai@^1.34.0",
-    "vite": "https://esm.sh/vite@^7.3.0",
-    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2"
+    "@vitejs/plugin-react": "https://esm.sh/@vitejs/plugin-react@^5.1.2",
+    "vite": "https://esm.sh/vite@^7.3.0"
   }
 }
 </script>
